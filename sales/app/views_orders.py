@@ -26,7 +26,7 @@ def save_order(request, order, success_status):
         if price == "":
             errors.append({"price": "This field is required"})
         else:
-            price = int(price)
+            price = float(price)
             if price < 0:
                 errors.append({"price": "Price cannot be negative"})
     except ValueError:
